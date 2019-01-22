@@ -95,7 +95,9 @@ namespace VesselApp
 
             public virtual string ToString(string SpeedFormat = "KN")
             {
-                return $"Name: {name}{Environment.NewLine}Year: {yearBuilt}{Environment.NewLine}" +
+                return $"Vesel: Vessel{Environment.NewLine}" +
+                       $"Name: {name}{Environment.NewLine}" +
+                       $"Year: {yearBuilt}{Environment.NewLine}" +
                        $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}";
             }
         }
@@ -121,8 +123,11 @@ namespace VesselApp
 
             public override string ToString(string SpeedFormat = "KN")
             {
-                return $"Name: {GetName()}{Environment.NewLine}Year: {GetYearBuilt()}{Environment.NewLine}" +
-                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}Passengers: {passengers}";
+                return $"Vessel: Ferry{Environment.NewLine}" +
+                       $"Name: {GetName()}{Environment.NewLine}" +
+                       $"Year: {GetYearBuilt()}{Environment.NewLine}" +
+                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}" +
+                       $"Passengers: {passengers}";
             }
         }
 
@@ -148,8 +153,11 @@ namespace VesselApp
 
             public override string ToString(string SpeedFormat = "KN")
             {
-                return $"Name: {GetName()}{Environment.NewLine}Year: {GetYearBuilt()}{Environment.NewLine}" +
-                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}Max force: {max_force} N";
+                return $"Vessel: Tugboat{Environment.NewLine}" +
+                       $"Name: {GetName()}{Environment.NewLine}" +
+                       $"Year: {GetYearBuilt()}{Environment.NewLine}" +
+                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}" +
+                       $"Max force: {max_force} N";
             }
 
         }
@@ -176,8 +184,11 @@ namespace VesselApp
 
             public override string ToString(string SpeedFormat = "KN")
             {
-                return $"Name: {GetName()}{Environment.NewLine}Year: {GetYearBuilt()}{Environment.NewLine}" +
-                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}Max depth: {max_depth} m";
+                return $"Vessel: Submarine{Environment.NewLine}" +
+                       $"Name: {GetName()}{Environment.NewLine}" +
+                       $"Year: {GetYearBuilt()}{Environment.NewLine}" +
+                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}" +
+                       $"Max depth: {max_depth} m";
             }
 
         }
@@ -202,7 +213,8 @@ namespace VesselApp
 
             foreach (Vessel i in list)
             {
-                i.GetVesselInfo("MS");
+                Console.WriteLine(i.ToString());
+                Console.WriteLine($"Speed in MS: {i.GetSpeed("MS")} MS");
                 Console.WriteLine(Environment.NewLine);
             }
 
