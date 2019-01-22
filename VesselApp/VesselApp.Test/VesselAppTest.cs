@@ -25,12 +25,12 @@ namespace VesselApp.Test
         }
 
         [Fact]
-        public void Getting_Vessel_values()
+        public void Getting_Vessel_Values_Test()
         {
             string name = "Test";
-            string speed = "50.0";
-
+            string speed = "50,0";
             string curr_year = Convert.ToString(DateTime.Now.Year);
+
             var ship = new Program.Vessel(name, curr_year, speed);
 
             Assert.Equal(name, ship.GetName());
@@ -39,13 +39,13 @@ namespace VesselApp.Test
         }
 
         [Fact]
-        public void Getting_Ferry_values_Test()
+        public void Getting_Ferry_Values_Test()
         {
             string name = "Test";
             string passangers = "200";
-            string speed = "50.0";
-
+            string speed = "50,0";
             string curr_year = Convert.ToString(DateTime.Now.Year);
+
             var ship = new Program.Ferry(name, curr_year, passangers, speed);
 
             Assert.Equal(name, ship.GetName());
@@ -55,13 +55,13 @@ namespace VesselApp.Test
         }
 
         [Fact]
-        public void Getting_Tugboat_values_Test()
+        public void Getting_Tugboat_Values_Test()
         {
             string name = "Test";
             string max_force = "200";
             string speed = "50.0";
-
             string curr_year = Convert.ToString(DateTime.Now.Year);
+
             var ship = new Program.Tugboat(name, curr_year, max_force, speed);
 
             Assert.Equal(name, ship.GetName());
@@ -75,9 +75,9 @@ namespace VesselApp.Test
         {
             string name = "Test";
             string max_depth = "500";
-            string speed = "50.0";
-
+            string speed = "50,0";
             string curr_year = Convert.ToString(DateTime.Now.Year);
+
             var ship = new Program.Submarine(name, curr_year, max_depth, speed);
 
             Assert.Equal(name, ship.GetName());
@@ -92,12 +92,12 @@ namespace VesselApp.Test
             string speed_kn = "100";
             string speed_ms = Convert.ToString(0.5144 * 100);
 
-            Program.Speed speed = new Program.Speed("100");
+            Program.Speed speed = new Program.Speed(speed_kn);
 
             Assert.Equal(speed_kn, speed.ToString());
             Assert.Equal(speed_kn, speed.ToString("KN", null));
             Assert.Equal(speed_ms, speed.ToString("MS", null));
-            Assert.Throws<FormatException>(() => speed.ToString("NotCorrectInput", null));
+            Assert.Throws<FormatException>(() => speed.ToString("NotCorrectFormat", null));
         }
     }
 }
