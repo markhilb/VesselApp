@@ -142,7 +142,7 @@ namespace VesselApp
                 Console.WriteLine($"Vessel: Tugboat");
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
-                Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)}");
+                Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}");
                 Console.WriteLine($"Max force: {max_force} N");
             }
 
@@ -192,10 +192,10 @@ namespace VesselApp
 
             try
             {
-                list.Add(new Vessel("Thomas", "2001", "100,0"));
-                list.Add(new Tugboat("Sivert", "1999", "50", "1,5"));
-                list.Add(new Ferry("Even", "2005", "69"));
-                list.Add(new Submarine("Lars", "2008", "10"));
+                list.Add(new Vessel("Centurion", "2001", "100,0"));
+                list.Add(new Tugboat("Onslow", "1999", "5000", "1,5"));
+                list.Add(new Ferry("Iolaire", "2005", "200"));
+                list.Add(new Submarine("Deveron", "2008", "200"));
             }
             catch (OldShipException) { }
 
