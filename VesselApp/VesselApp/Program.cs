@@ -201,7 +201,6 @@ namespace VesselApp
             foreach (Vessel i in list)
             {
                 i.GetVesselInfo("MS");
-                Console.WriteLine(i.ToString("MS"));
                 Console.WriteLine(Environment.NewLine);
             }
 
