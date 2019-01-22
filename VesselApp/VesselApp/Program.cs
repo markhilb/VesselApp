@@ -87,6 +87,7 @@ namespace VesselApp
             public string GetSpeed(string format = "KN") { return speed.ToString(format, null); }
             public virtual void GetVesselInfo(string SpeedFormat = "KN")
             {
+                Console.WriteLine($"Vessel: Vessel");
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
                 Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}");
@@ -102,17 +103,16 @@ namespace VesselApp
 
         public class Ferry : Vessel
         {
-            private string passangers;
+            public string passangers { get; }
 
             public Ferry(string Name, string Year, string Passangers, string Speed = "25") : base(Name, Year, Speed)
             {
                 passangers = Passangers;
             }
 
-            public string GetPassangers() { return passangers; }
-
             public override void GetVesselInfo(string SpeedFormat = "KN")
             {
+                Console.WriteLine($"Vessel: Ferry");
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
                 Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}");
@@ -139,6 +139,7 @@ namespace VesselApp
 
             public override void GetVesselInfo(string SpeedFormat = "KN")
             {
+                Console.WriteLine($"Vessel: Tugboat");
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
                 Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)}");
@@ -166,6 +167,7 @@ namespace VesselApp
 
             public override void GetVesselInfo(string SpeedFormat = "KN")
             {
+                Console.WriteLine($"Vessel: Submarine");
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
                 Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}");

@@ -50,7 +50,7 @@ namespace VesselApp.Test
 
             Assert.Equal(name, ship.GetName());
             Assert.Equal(curr_year, ship.GetYearBuilt());
-            Assert.Equal(passangers, ship.GetPassangers());
+            Assert.Equal(passangers, ship.passangers);
             Assert.Equal(speed, ship.GetSpeed());
         }
 
