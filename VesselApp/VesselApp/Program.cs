@@ -103,11 +103,11 @@ namespace VesselApp
 
         public class Ferry : Vessel
         {
-            public string passangers { get; }
+            public string passengers { get; }
 
-            public Ferry(string Name, string Year, string Passangers, string Speed = "25") : base(Name, Year, Speed)
+            public Ferry(string Name, string Year, string Passengers, string Speed = "25") : base(Name, Year, Speed)
             {
-                passangers = Passangers;
+                passengers = Passengers;
             }
 
             public override void GetVesselInfo(string SpeedFormat = "KN")
@@ -116,13 +116,13 @@ namespace VesselApp
                 Console.WriteLine($"Name: {GetName()}");
                 Console.WriteLine($"Year: {GetYearBuilt()}");
                 Console.WriteLine($"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}");
-                Console.WriteLine($"Passangers: {passangers}");
+                Console.WriteLine($"Passengers: {passengers}");
             }
 
             public override string ToString(string SpeedFormat = "KN")
             {
                 return $"Name: {GetName()}{Environment.NewLine}Year: {GetYearBuilt()}{Environment.NewLine}" +
-                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}Passangers: {passangers}";
+                       $"Speed: {speed.ToString(SpeedFormat, null)} {SpeedFormat}{Environment.NewLine}Passengers: {passengers}";
             }
         }
 
@@ -193,7 +193,7 @@ namespace VesselApp
             try
             {
                 list.Add(new Vessel("Centurion", "2001", "100,0"));
-                list.Add(new Tugboat("Onslow", "1999", "5000", "1,5"));
+                list.Add(new Tugboat("Onslow", "1999", "5000", "10,5"));
                 list.Add(new Ferry("Iolaire", "2005", "200"));
                 list.Add(new Submarine("Deveron", "2008", "200"));
             }
